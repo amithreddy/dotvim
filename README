@@ -1,3 +1,5 @@
+Original Instructions: http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
+
 The following instructions assume that your home directory contains a .vimrc file,
 a .vim directory and a .gvimrc file (optional).
 
