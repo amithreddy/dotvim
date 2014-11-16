@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/amith/Mywebsite/templates/essay'
+let g:netrw_dirhist_2='/home/amith/Desktop/eu4launcher'
+let g:netrw_dirhist_3='/usr/local'
+let g:netrw_dirhist_4='/usr/sbin'
+let g:netrw_dirhist_5='/home/amith/Mywebsite/templates'
+let g:netrw_dirhist_6='/home/amith/Mywebsite'
+let g:netrw_dirhist_7='/home/amith/Mywebsite/templates'
+let g:netrw_dirhist_8='/home/amith/weather/static'
+let g:netrw_dirhist_9='/home/amith/.vim'
