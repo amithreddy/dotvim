@@ -12,11 +12,11 @@ set sessionoptions-=options
 " It is recommended to make changes after sourcing debian.vim since it alters
 " the value of the 'compatible' option.
 
-" Uncomment the following to have Vim jump to the last position when
+" The following jump Vim to the last position when
 " reopening a file
-"if has("autocmd")
-"  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-"endif
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
 
 " The following are commented out as they cause vim to behave a lot
 " differently from regular Vi. They are highly recommended though.
@@ -28,6 +28,9 @@ set incsearch		" Incremental search
 "set autowrite		" Automatically save before commands like :next and :make
 "set hidden		" Hide buffers when they are abandoned
 set mouse=a		" Enable mouse usage (all modes)
+
+" Have vim recognize JSON as a filetype
+autocmd BufNewFile,BufRead *.json set filetype=json
 
 " Tab Space for different filetypes
 autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
@@ -47,3 +50,5 @@ set number
 "Run the file with python
 :map <F5> :! python %<CR>
 
+" Syntastic
+let g:syntastic_JSON_checkers= ['jsonlint']
