@@ -29,6 +29,9 @@ set incsearch		" Incremental search
 "set hidden		" Hide buffers when they are abandoned
 set mouse=a		" Enable mouse usage (all modes)
 
+" Backspace deletes over line breaks. Like most other apps
+set backspace=2 
+
 " Have vim recognize JSON as a filetype
 autocmd BufNewFile,BufRead *.json set filetype=json
 
@@ -37,18 +40,18 @@ autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType javascript setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 set autoindent
 
-"show line numbers
+" Show line numbers
 set number
 
-"highlight line number in grey
+" Highlight line number in grey
 :highlight LineNr ctermfg=grey
 
-"Map F4 to write to disk
+" Map <F4> to write to disk
 :imap <F4> <ESC>:w <CR>
 :map <F4> <ESC>:w <CR>
 
-"Run the file with python
+" Map <F5> to Run the file with python
 :map <F5> :! python %<CR>
 
-" Syntastic
+" Syntastic Config
 let g:syntastic_JSON_checkers= ['jsonlint']
