@@ -47,11 +47,33 @@ set smarttab
 autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType javascript setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
-" Show line numbers
-set number
+" Toggle between relative and absolute line numbers
+function! NumberToggle()
+  if(&number == 1)
+    set relativenumber
+  else
+    set number
+  endif
+endfunc
+call NumberToggle()
+
+nnoremap <C-n> :call NumberToggle()<cr>
+:au FocusLost * :set number
+:au FocusGained * :set relativenumber
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
+
+" save all open buffers when focus is lost
+au FocusLost * :wa
 
 " Highlight line number in grey
-:highlight LineNr ctermfg=grey
+highlight LineNr ctermfg=grey
+
+" remap esc to jj in insert mode
+inoremap jj <ESC>
+
+" remap ; to ;
+nnoremap ; ;
 
 " Map <F4> to write to disk
 :imap <F4> <ESC>:w <CR>
