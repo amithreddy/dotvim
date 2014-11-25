@@ -3,6 +3,7 @@ set nocp
 execute pathogen#infect('~/.vim/bundle/{}')
 syntax on
 filetype plugin indent on
+" don't know what sessionoptions does
 set sessionoptions-=options
 
 " All system-wide defaults are set in $VIMRUNTIME/debian.vim and sourced by
@@ -10,7 +11,6 @@ set sessionoptions-=options
 " settings, you should do it in this file (/etc/vim/vimrc), since debian.vim
 " will be overwritten everytime an upgrade of the vim packages is performed.
 " It is recommended to make changes after sourcing debian.vim since it alters
-" the value of the 'compatible' option.
 
 " The following jump Vim to the last position when
 " reopening a file
@@ -18,16 +18,19 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-" The following are commented out as they cause vim to behave a lot
-" differently from regular Vi. They are highly recommended though.
+" MSC
 set showcmd		" Show (partial) command in status line.
 set showmatch		" Show matching brackets.
-"set ignorecase		" Do case insensitive matching
-"set smartcase		" Do smart case matching
+set mouse=a		" Enable mouse usage (all modes)
+set showmode		" show insert,visiual mode 
+
+" Search settings 
+set ignorecase		" Do case insensitive matching
+set smartcase		" Do smart case matching
 set incsearch		" Incremental search
+
 "set autowrite		" Automatically save before commands like :next and :make
 "set hidden		" Hide buffers when they are abandoned
-set mouse=a		" Enable mouse usage (all modes)
 
 " Backspace deletes over line breaks. Like most other apps
 set backspace=2 
@@ -35,10 +38,14 @@ set backspace=2
 " Have vim recognize JSON as a filetype
 autocmd BufNewFile,BufRead *.json set filetype=json
 
+" Default tabkey behaviour
+set autoindent
+set smartindent
+set smarttab
+
 " Tab Space for different filetypes
 autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType javascript setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
-set autoindent
 
 " Show line numbers
 set number
