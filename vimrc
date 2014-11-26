@@ -84,3 +84,4 @@ nnoremap ; ;
 
 " Syntastic Config
 let g:syntastic_JSON_checkers= ['jsonlint']
+let g:syntastic_scss_checkrs= ['sass']
