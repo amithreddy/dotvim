@@ -70,7 +70,7 @@ au FocusLost * :wa
 highlight LineNr ctermfg=grey
 
 " remap esc to jj in insert mode
-inoremap jj <ESC>
+inoremap nn <ESC>
 
 " remap ; to ;
 nnoremap ; ;
