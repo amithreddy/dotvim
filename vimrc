@@ -73,7 +73,7 @@ highlight LineNr ctermfg=grey
 inoremap nn <ESC>
 
 " remap ; to ;
-nnoremap ; ;
+nnoremap ; :
 
 " Map <F4> to write to disk
 :imap <F4> <ESC>:w <CR>
