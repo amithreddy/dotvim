@@ -60,12 +60,15 @@ call NumberToggle()
 nnoremap <C-n> :call NumberToggle()<cr>
 :au FocusLost * :set number
 :au FocusGained * :set relativenumber
-autocmd InsertEnter * :set number
+" autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
 
-" save all open buffers when focus is lost
-au FocusLost * :wa
-
+" persistent undo
+set undofile 
+" autoread and autosave 
+set autoread
+set autowrite
+set autowriteall 
 
 " remap esc to jj in insert mode
 inoremap ww <ESC>
@@ -82,11 +85,16 @@ nnoremap ; :
 
 " Color Scheme
 set t_Co=256
-" Highlight line number in grey
-" 6 = skyblue
-hi LineNr ctermfg=grey
-hi Comment term=bold ctermfg=6 
+hi Normal ctermfg=007
+hi Statement term=bold ctermfg=130
+hi LineNr ctermfg=238 ctermbg=233
+hi CursorLineNr ctermfg=238
+hi CursorLine term=none cterm=none ctermbg=233
+hi Comment term=bold ctermfg=24
 hi Folded term=standout ctermfg=242 ctermbg=None
+hi String ctermfg=240 ctermbg=None
+hi Define term=Underline ctermfg=008
+hi link Function Define
 
 
 " Syntastic Config
