@@ -66,11 +66,9 @@ autocmd InsertLeave * :set relativenumber
 " save all open buffers when focus is lost
 au FocusLost * :wa
 
-" Highlight line number in grey
-highlight LineNr ctermfg=grey
 
 " remap esc to jj in insert mode
-inoremap nn <ESC>
+inoremap ww <ESC>
 
 " remap ; to ;
 nnoremap ; :
@@ -81,6 +79,15 @@ nnoremap ; :
 
 " Map <F5> to Run the file with python
 :autocmd FileType python map <F5> :! python %<CR>
+
+" Color Scheme
+set t_Co=256
+" Highlight line number in grey
+" 6 = skyblue
+hi LineNr ctermfg=grey
+hi Comment term=bold ctermfg=6 
+hi Folded term=standout ctermfg=242 ctermbg=None
+
 
 " Syntastic Config
 let g:syntastic_JSON_checkers= ['jsonlint']
