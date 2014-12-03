@@ -80,7 +80,7 @@ nnoremap ; :
 :map <F4> <ESC>:w <CR>
 
 " Map <F5> to Run the file with python
-:map <F5> :! python %<CR>
+:autocmd FileType python map <F5> :! python %<CR>
 
 " Syntastic Config
 let g:syntastic_JSON_checkers= ['jsonlint']
