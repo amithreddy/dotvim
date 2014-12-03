@@ -29,9 +29,6 @@ set ignorecase		" Do case insensitive matching
 set smartcase		" Do smart case matching
 set incsearch		" Incremental search
 
-"set autowrite		" Automatically save before commands like :next and :make
-"set hidden		" Hide buffers when they are abandoned
-
 " Backspace deletes over line breaks. Like most other apps
 set backspace=2 
 
@@ -42,26 +39,26 @@ autocmd BufNewFile,BufRead *.json set filetype=json
 set autoindent
 set smartindent
 set smarttab
-
 " Tab Space for different filetypes
 autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType javascript setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
 " Toggle between relative and absolute line numbers
 function! NumberToggle()
-  if(&number == 1)
-    set relativenumber
+  if(&relativenumber == 1)
+  set norelativenumber
+  set number
   else
-    set number
+  set nonumber
+  set relativenumber
   endif
-endfunc
+endfunction
 call NumberToggle()
 
-nnoremap <C-n> :call NumberToggle()<cr>
-:au FocusLost * :set number
-:au FocusGained * :set relativenumber
-" autocmd InsertEnter * :set number
+nnoremap <C-n> :call NumberToggle()<Enter>
+autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
+autocmd CursorMoved * :set relativenumber
 
 " persistent undo
 set undofile 
@@ -76,26 +73,26 @@ inoremap ww <ESC>
 " remap ; to ;
 nnoremap ; :
 
-" Map <F4> to write to disk
-:imap <F4> <ESC>:w <CR>
-:map <F4> <ESC>:w <CR>
-
 " Map <F5> to Run the file with python
-:autocmd FileType python map <F5> :! python %<CR>
+autocmd FileType python map <F5> :! python %<CR>
 
 " Color Scheme
 set t_Co=256
 hi Normal ctermfg=007
 hi Statement term=bold ctermfg=130
 hi LineNr ctermfg=238 ctermbg=233
+
 hi CursorLineNr ctermfg=238
-hi CursorLine term=none cterm=none ctermbg=233
+hi CursorLine term=none cterm=none ctermbg=233 
+
 hi Comment term=bold ctermfg=24
 hi Folded term=standout ctermfg=242 ctermbg=None
 hi String ctermfg=240 ctermbg=None
 hi Define term=Underline ctermfg=008
 hi link Function Define
 
+" current line is underlined
+set cursorline
 
 " Syntastic Config
 let g:syntastic_JSON_checkers= ['jsonlint']
