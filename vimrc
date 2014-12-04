@@ -51,6 +51,7 @@ function! NumberToggle()
   else
   set nonumber
   set relativenumber
+  set number
   endif
 endfunction
 call NumberToggle()
@@ -66,6 +67,8 @@ set undofile
 set autoread
 set autowrite
 set autowriteall 
+set updatetime=100
+autocmd CursorHold,CursorHoldI <buffer> silent update "update during inactivity
 
 " remap esc to jj in insert mode
 inoremap ww <ESC>
