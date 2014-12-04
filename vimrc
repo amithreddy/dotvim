@@ -62,7 +62,10 @@ autocmd InsertLeave * :set relativenumber
 autocmd CursorMoved * :set relativenumber
 
 " persistent undo
+set undodir=~/.vim/undodir
 set undofile 
+set undolevels=1000
+
 " autoread and autosave 
 set autoread
 set autowrite
