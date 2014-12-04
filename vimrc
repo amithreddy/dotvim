@@ -79,6 +79,10 @@ nnoremap ; :
 " Map <F5> to Run the file with python
 autocmd FileType python map <F5> :! python %<CR>
 
+" Map za to space
+autocmd FileType python noremap <Space> za
+
+
 " Color Scheme
 set t_Co=256
 hi Normal ctermfg=007
