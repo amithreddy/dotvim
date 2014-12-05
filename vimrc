@@ -57,8 +57,6 @@ endfunction
 call NumberToggle()
 
 nnoremap <C-n> :call NumberToggle()<Enter>
-autocmd InsertEnter * :set number
-autocmd InsertLeave * :set relativenumber
 autocmd CursorMoved * :set relativenumber
 
 " persistent undo
