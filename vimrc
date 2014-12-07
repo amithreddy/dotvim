@@ -69,10 +69,10 @@ set autoread
 set autowrite
 set autowriteall 
 set updatetime=100
-autocmd CursorHold,CursorHoldI <buffer> silent update "update during inactivity
+autocmd CursorHold,InsertLeave <buffer> silent update "update during inactivity
 
 " remap esc to jj in insert mode
-inoremap ww <ESC>
+inoremap ;; <ESC>
 
 " remap ; to ;
 nnoremap ; :
@@ -82,7 +82,6 @@ autocmd FileType python map <F5> :! python %<CR>
 
 " Map za to space
 autocmd FileType python noremap <Space> za
-
 
 " Color Scheme
 set t_Co=256
