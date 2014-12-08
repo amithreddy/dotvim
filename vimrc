@@ -60,8 +60,9 @@ nnoremap <C-n> :call NumberToggle()<Enter>
 autocmd CursorMoved * :set relativenumber
 
 " backup files 
+" arstarst
 set backup
-set backupdir=~/.vim/_backup/
+set backupdir=~/.vim/backup/
 " persistent undo
 set undodir=~/.vim/undodir
 set undofile 
