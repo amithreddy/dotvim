@@ -100,7 +100,20 @@ hi Comment term=bold ctermfg=24
 hi Folded term=standout ctermfg=242 ctermbg=None
 hi String ctermfg=240 ctermbg=None
 hi Define term=Underline ctermfg=008
-hi link Function Define
+hi ToDo term=reverse cterm=reverse ctermfg=232
+hi WildMenu term=standout ctermfg=232
+
+hi Pmenu term=reverse cterm=reverse ctermfg=232 ctermbg=None
+hi Pmenusel term=reverse cterm=reverse ctermfg=232
+hi PmenuSbar term=reverse cterm=reverse ctermfg=232
+hi PmenuThumb term=reverse cterm=reverse ctermfg=232
+
+hi! link Search Visual
+hi! link SpellBad ErrorMsg
+hi! link SpellCap ErrorMsg
+hi! link SpellRare ErrorMsg
+hi! link SpellLocal ErrorMsg
+hi! link Function Define
 
 " current line is underlined
 set cursorline
