@@ -102,6 +102,7 @@ hi String ctermfg=240 ctermbg=None
 hi Define term=Underline ctermfg=008
 hi ToDo term=reverse cterm=reverse ctermfg=232
 hi WildMenu term=standout ctermfg=232
+hi visual ctermbg=234
 
 hi Pmenu term=reverse cterm=reverse ctermfg=232 ctermbg=None
 hi Pmenusel term=reverse cterm=reverse ctermfg=232
